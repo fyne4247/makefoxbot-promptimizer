@@ -106,10 +106,6 @@ Pass each character as its own argument. If one LoRA covers everyone, it shows u
 - **`BREAK` and regional prompting (`ADDCOMM`, `ADDCOL`, `ADDROW`)** are documented by MakeFox, but the skill doesn't use them unless you ask, since how well they work depends on the backend.
 - **Negative prompts:** the skill only writes a `/setnegative` line if you ask for negatives or tell it what to avoid.
 
-## Content rules
-
-The skill follows the platform's safety rules and won't write sexual content involving minors or child-coded characters, including fictional and anthropomorphic ones.
-
 ## Running the tests
 
 ```bash
