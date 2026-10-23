@@ -4,9 +4,10 @@ makefox-scrape-report.json
 makefox-responses.json
 loras-imported.json
 MAKEFOX_TAG_CLASSIFICATION_PLAN.md
-README.md
 makefoxhtml/
-references/
+references/*
+!references/tags.json
+!references/aliases.json
 .DS_Store
 
 .cache/

@@ -234,7 +234,7 @@ def main():
     parser.add_argument('--cache-dir', default=str(Path(__file__).resolve().parent.parent / '.cache' / 'e621'))
     parser.add_argument('--categories', default='0,1,3,4,5,8', help='e621 categories (default: general, artist, copyright, character, species, lore)')
     parser.add_argument('--min-count', type=int, default=1, help='Keep tags with at least this many posts; 0 includes rare zero-post tags')
-    parser.add_argument('--user-agent', default=os.environ.get('E621_USER_AGENT', 'MakeFoxPromptFormatter/3.4 (community vocabulary refresh)'), help='Use a descriptive User-Agent; ideally include your public project/contact URL')
+    parser.add_argument('--user-agent', default=os.environ.get('E621_USER_AGENT', 'MakeFoxPromptFormatter/2.0 (community vocabulary refresh)'), help='Use a descriptive User-Agent; ideally include your public project/contact URL')
     parser.add_argument('--force', action='store_true', help='Download again even when cached files match the manifest')
     try:
         run(parser.parse_args())

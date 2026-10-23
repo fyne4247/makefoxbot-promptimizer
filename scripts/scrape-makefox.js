@@ -70,7 +70,8 @@ function publish(final=false) {
 // Execute in page context: one card's anchor and exactly one model hyperlink.
 function extractVisibleCards() {
   const results=[];
-  const anchors=[...document.querySelectorAll('a[href*="lora-viewer.html?id="]')];
+  // Card links are relative (href="?id=123"); match on the resolved URL below.
+  const anchors=[...document.querySelectorAll('a[href*="?id="]')];
   for (const link of anchors) {
     let url;
     try { url=new URL(link.href); } catch { continue; }
@@ -81,10 +82,11 @@ function extractVisibleCards() {
     let card=null;
     for (let depth=0; node?.parentElement && depth<13; depth++) {
       node=node.parentElement;
-      const count=node.querySelectorAll('a[href*="lora-viewer.html?id="]').length;
+      const count=node.querySelectorAll('a[href*="?id="]').length;
       if (count>1) break;
       const t=node.innerText||'';
-      if (t.includes('Prompt Syntax') && t.includes('Copy Full Prompt') && /<lora:[^>]+>/i.test(t)) { card=node; break; }
+      // Section labels are uppercased by CSS, so compare case-insensitively.
+      if (/prompt syntax/i.test(t) && /copy full prompt/i.test(t) && /<lora:[^>]+>/i.test(t)) { card=node; break; }
     }
     if (!card) continue;
     const civitai=card.querySelector('a[href^="https://civitai.com/"]')?.href||null;

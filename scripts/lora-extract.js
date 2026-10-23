@@ -10,7 +10,15 @@ const idFields = ['id', 'lora_id', 'loraId', 'model_id', 'modelId'];
 const triggerFields = ['trigger_words', 'triggerWords', 'trained_words', 'trainedWords', 'activation_tags', 'activationTags', 'trigger', 'triggers'];
 const skipKeys = new Set(['images','image','preview','previews','media','gallery','thumbnail','cover','cover_image','user','owner','account','auth','token','cookie','login','votes','ratings','review','usage']);
 const clean = x => x == null ? '' : String(x).trim();
-function first(obj, keys) { for (const key of keys) if (obj[key] !== undefined && obj[key] !== null && obj[key] !== '') return obj[key]; return null; }
+// Field names are matched case-insensitively: MakeFox's API uses PascalCase (Name, BaseModel, TriggerWords).
+function first(obj, keys) {
+  const lower = new Map(Object.keys(obj).map(k => [k.toLowerCase(), k]));
+  for (const key of keys) {
+    const actual = key in obj ? key : lower.get(key.toLowerCase());
+    if (actual !== undefined && obj[actual] !== undefined && obj[actual] !== null && obj[actual] !== '') return obj[actual];
+  }
+  return null;
+}
 function uniqueStrings(xs) { return [...new Set(xs.map(clean).filter(Boolean))]; }
 function triggers(x) {
   if (Array.isArray(x)) return uniqueStrings(x.flatMap(y => typeof y === 'string' ? [y] : y && typeof y === 'object' ? [first(y,['name','tag','word','text'])] : []));

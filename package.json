@@ -1,6 +1,6 @@
 {
   "name": "makefox-prompt-skill",
-  "version": "3.4.0",
+  "version": "2.0.1",
   "private": true,
   "description": "Third-party MakeFox prompt formatter and public LoRA catalog collector",
   "scripts": {

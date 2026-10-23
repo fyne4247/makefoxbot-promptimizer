@@ -1,7 +1,7 @@
 ---
 name: make
 description: Turn rough or jumbled image ideas into complete MakeFox tag prompts, apply model-specific syntax, resolve matching catalog LoRAs and triggers, separate multiple subjects cleanly, and optionally hand the finished command to MakeFoxBot.
-version: 3.3.0
+version: 2.0.1
 user-invocable: true
 metadata: {"short-description":"Build MakeFox prompts with catalog LoRA lookup","platform":"openclaw"}
 ---
