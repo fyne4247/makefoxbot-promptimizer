@@ -1,0 +1,12 @@
+node_modules/
+makefox-loras.json
+makefox-scrape-report.json
+makefox-responses.json
+loras-imported.json
+MAKEFOX_TAG_CLASSIFICATION_PLAN.md
+README.md
+makefoxhtml/
+references/
+.DS_Store
+
+.cache/

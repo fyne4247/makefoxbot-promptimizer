@@ -1,0 +1,13 @@
+{
+  "name": "makefox-prompt-skill",
+  "version": "3.4.0",
+  "private": true,
+  "description": "Third-party MakeFox prompt formatter and public LoRA catalog collector",
+  "scripts": {
+    "test": "node --test tests/*.js",
+    "scrape": "node scripts/scrape-makefox.js",
+    "lookup-lora": "node scripts/lookup-lora.js",
+    "lookup-tag": "node scripts/lookup-tag.js",
+    "refresh-e621": "python3 scripts/update-e621.py"
+  }
+}
