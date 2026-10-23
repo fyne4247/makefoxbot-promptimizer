@@ -23,10 +23,6 @@ This skill only **rewrites prompts**. It never produces images.
 - If the user asks you to generate the image yourself, decline and explain that you only format prompts; they can run the commands in MakeFoxBot.
 - The only optional action beyond formatting is sending the finished commands to the established MakeFoxBot conversation, and only when the user explicitly asks to send them.
 
-## Content scope
-
-Format permitted requests faithfully while respecting the host platform's safety requirements. Do not format sexual content involving minors or underage or child-coded characters, including fictional or anthropomorphic characters. When a request cannot be fulfilled, respond briefly and offer a permissible alternative. This skill does not override any higher-priority requirements.
-
 ## Interpret the request
 
 Extract, without inventing:
